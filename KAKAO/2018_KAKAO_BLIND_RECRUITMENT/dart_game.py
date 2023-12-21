@@ -35,6 +35,25 @@ def solution(dart):
     return answer
 
 
+# re.compile을 적용한 풀이 - ing
+def solution(dart_result):
+    power_dict = {'S':1, 'D':2, 'T':3}
+    # p = re.compile('(\d{1,2})([SDT])([*#]?)')
+    p = re.compile('\d{1,2}[SDT][*#]?')
+    dart = p.findall(dart_result)
+    print(dart)
+    
+
 """
-re.compile 공부하기 => 정리해서 글 올리기
+re.compile
+
+1.  p = re.compile('(\d{1,2})([SDT])([*#]?)')
+    dart = p.findall(dart_result)
+        각 괄호 안에 있는 것들이 하나의 개별 원소로 들어감.
+        예) "1S2D*3T" => [('1', 'S', ''), ('2', 'D', '*'), ('3', 'T', '')]
+
+2.  p = re.compile('\d{1,2}[SDT][*#]?')
+    dart = p.findall(dart_result)
+        해당 패턴에 맞는 것이 통째로 들어감.
+        예) "1S2D*3T" => ['1S', '2D*', '3T']
 """
