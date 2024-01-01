@@ -13,6 +13,7 @@
 
 """
 23.12.31 3:50pm~4:05pm
+24.01.01 10:46am~10:53am
 """
 
 def solution(numbers, hand):
@@ -43,8 +44,8 @@ def solution(numbers, hand):
             cur_r = n
             answer += 'R'
         else:
-            dl = (cur_l-n)%3 + (cur_l-n)//3
-            dr = (cur_r-n)%3 + (cur_r-n)//3
+            dl = abs(cur_l-n)%3 + abs(cur_l-n)//3
+            dr = abs(cur_r-n)%3 + abs(cur_r-n)//3
             if dl < dr:
                 cur_l = n
                 answer += 'L'
@@ -60,3 +61,19 @@ def solution(numbers, hand):
                     answer += 'R'
     
     return answer
+
+
+"""
+12.31 코드가 틀렸던 이유: 거리에 절대값을 안씌워서.
+내가 세운 거리 구하는 공식은 (현위치-목표위치)를 3으로 나눈 나머지와 3으로 나눈 몫을 더하는 형식이다.
+더 자세히 설명하면,
+(현위치-목표위치)%3  은 x좌표의 차이 (좌우)
+(현위치-목표위치)//3 은 y좌표의 차이 (상하)
+그런데, 처음에 풀 때는 (현위치-목표위치)에 절대값을 씌우지 않아서, 나머지와 몫을 더할 때 오류가 생겼다.
+여기서 나머지와 몫은 항상 양수여야 하므로!
+
+* python에서 절대값은 내장함수로 해결할 수 있다.
+abs(숫자)
+abs(-11) == 11
+abs(-99.99) == 99.99
+"""
