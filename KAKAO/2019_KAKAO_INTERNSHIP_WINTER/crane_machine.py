@@ -9,7 +9,7 @@
 def solution(board, moves):
     answer = 0
     n = len(board)
-    new_board = [[] for i in range(n)]
+    new_board = [[] for _ in range(n)]
     basket = []
     for i in range(n):
         for j in range(n):
