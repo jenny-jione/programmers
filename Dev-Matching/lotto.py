@@ -29,7 +29,9 @@ def solution(lottos, win_nums):
 """
 사용한 개념
 1) 0으로 초기화하는 리스트
-2) 리스트의 특정 요소 개수 세기. li.count(요소)
+    answer = [0] * n(초기화할 크기)
+2) 리스트의 특정 요소 개수 세기
+    li.count(요소)
 
 
 다른 사람 풀이
