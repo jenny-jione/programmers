@@ -45,7 +45,7 @@ print(f"""
 \"\"\"
 문제 이름: 
 문제 링크: 
-문제 티어: 
+문제 티어: Lv.
 
 타임라인
 {chr(10).join(result)}  total: {total}분
